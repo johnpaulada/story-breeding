@@ -1,4 +1,7 @@
 # Story Breeding
+
+![Banner](banner.png)
+
 A site that randomizes stories to combine for writing inspiration.
 
 Built on top of the [Project Savitar](https://github.com/johnpaulada/project-savitar) fast static site template.
