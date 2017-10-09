@@ -1,0 +1,16 @@
+@mixin small-story-orientation {
+    .container {
+        flex-direction: column;
+    }
+    .halfpage {
+        width: 100vw;
+        height: 50vh;
+    }
+}
+
+@mixin large-story-orientation {
+    .halfpage {
+        width: 50vw;
+        height: 100vh;
+    }
+}

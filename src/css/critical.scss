@@ -1,0 +1,17 @@
+@import 'reset';
+@import 'layout';
+@import 'colors';
+@import 'sections/sections';
+
+body {
+    transition: all 1s;
+    filter: blur(10px);
+}
+
+@media (max-width: 720px) {
+    @include small-story-orientation();
+}
+
+@media (min-width: 721px) {
+    @include large-story-orientation();
+}
