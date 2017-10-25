@@ -5,8 +5,6 @@ if(navigator.serviceWorker) {
   });
 }
 
-alert("This site uses mining instead of ads so as to not ruin the aesthetics of the site. If this doesn't bother you, have fun using this! ^_^");
-
 const STORY1_INDEX = 0
 const STORY2_INDEX = 1
 
